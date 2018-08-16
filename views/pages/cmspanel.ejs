@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>template - cms</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="splashContainer"></div>
+        <h1>cms title</h1>
+        <ul>
+            <li>
+                <h2>opret bruger</h2>
+                <div>
+                    <label>brugernavn:</label>
+                    <input type="text" value="" id="newUserName">
+                    <br>
+                    <label>fornavn:</label>
+                    <input type="text" value="" id="newUserForName">
+                    <br>
+                    <label>efternavn:</label>
+                    <input type="text" value="" id="newUserLastName">
+                    <br>
+                    <label>adgangskode:</label>
+                    <input type="password" value="" id="newUserPassword">
+                    <br>
+                    <label>gentag adgangskode:</label>
+                    <input type="password" value="" id="newUserRepeat">
+                    <br>
+                    <input type="button" value="opret bruger" id="newUserSubmit">
+                </div>
+            </li>
+            <li>
+                <h2>slet bruger</h2>
+                <ul>
+                    <% allUsers.forEach(function(navData) { %>
+                        <li>
+                            <span><%= navData.username %> -</span>
+                            <button class="deleteUserbtn" onclick="removeUser('<%= navData.id %>');">
+                                slet bruger
+                            </button>
+                        </li>
+                    <% }) %>
+                </ul>
+            </li>
+        </ul>
+        <% include ../partials/footer %>
+        <script src="js/validating.js"></script>
+        <script src="js/cmspanel.js"></script>
+    </body>
+</html>

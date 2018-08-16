@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>template - index</title>
+    </head>
+    <body>
+        <ul>
+            <% navPages.forEach(function(navData) { %>
+                <li>
+                    <a href="<%= navData.route %>"><%= navData.title %></a>
+                </li>
+            <% }) %>
+        </ul>
+        <h1>index title</h1>
+        <% include ../partials/footer %>
+    </body>
+</html>
